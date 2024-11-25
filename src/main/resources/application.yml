@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: emplacement-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/emplacement_service
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: emplacement-service-group
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:default-secret}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
+  instance:
+    prefer-ip-address: true

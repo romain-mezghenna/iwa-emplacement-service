@@ -24,7 +24,7 @@ public class FavorisService {
     }
 
     public Optional<Favoris> updateFavoris(Long idUser, Long idEmplacement) {
-        Optional<Favoris> existingFavori = favoriRepository.findByidUserAndidEmplacement(idUser, idEmplacement);
+        Optional<Favoris> existingFavori = favoriRepository.findByIdUserAndIdEmplacement(idUser, idEmplacement);
         if (existingFavori.isPresent()) {
             Favoris favoris = existingFavori.get();
             return Optional.of(favoriRepository.save(favoris));
@@ -33,7 +33,7 @@ public class FavorisService {
     }
 
     public void deleteFavoris(Long idUser, Long idEmplacement) {
-        favoriRepository.findByidUserAndidEmplacement(idUser, idEmplacement)
+        favoriRepository.findByIdUserAndIdEmplacement(idUser, idEmplacement)
                 .ifPresent(favoriRepository::delete);
     }
 }

@@ -18,9 +18,9 @@ public class FavorisController {
     private FavorisService favorisService;
 
     // Récupérer tous les favoris d'un utilisateur
-    @GetMapping("/{userId}")
-    public ResponseEntity<List<Favoris>> getFavorisByUser(@PathVariable Long userId) {
-        List<Favoris> favoris = favorisService.getFavorisByUser(userId);
+    @GetMapping("/{idUser}")
+    public ResponseEntity<List<Favoris>> getFavorisByUser(@PathVariable Long idUser) {
+        List<Favoris> favoris = favorisService.getFavorisByUser(idUser);
         return ResponseEntity.ok(favoris);
     }
 
@@ -31,7 +31,7 @@ public class FavorisController {
     }
 
     // Mettre à jour un favori (si besoin, par ex. modifier des détails)
-    @PutMapping("/{userId}/update")
+    @PutMapping("/{idUser}/update")
     public ResponseEntity<Favoris> updateFavoris(@PathVariable Long idUser, @RequestParam Long idEmplacement) {
         Optional<Favoris> favoris = favorisService.updateFavoris(idUser, idEmplacement);
         return favoris.map(ResponseEntity::ok)
@@ -39,7 +39,7 @@ public class FavorisController {
     }
 
     // Supprimer un favori
-    @DeleteMapping("/{userId}/delete")
+    @DeleteMapping("/{idUser}/delete")
     public ResponseEntity<Void> deleteFavoris(@PathVariable Long idUser, @RequestParam Long idEmplacement) {
         favorisService.deleteFavoris(idUser, idEmplacement);
         return ResponseEntity.noContent().build();

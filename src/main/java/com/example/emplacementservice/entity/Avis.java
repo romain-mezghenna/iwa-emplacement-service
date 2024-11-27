@@ -24,6 +24,9 @@ public class Avis {
     @Column(nullable = false)
     private Long idEmplacement;
 
+    @Column(nullable = false)
+    private Long idUser;
+
     public Avis(Long idAvis, Integer note, String commentaire, LocalDate date, Long idEmplacement) {
         this.idAvis = idAvis;
         this.note = note;

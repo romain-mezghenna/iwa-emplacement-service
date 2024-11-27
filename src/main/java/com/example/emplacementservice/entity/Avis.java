@@ -32,6 +32,10 @@ public class Avis {
         this.idEmplacement = idEmplacement;
     }
 
+    public Avis() {
+
+    }
+
     public Long getIdAvis() {
         return idAvis;
     }

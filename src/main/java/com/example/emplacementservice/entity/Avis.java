@@ -27,12 +27,13 @@ public class Avis {
     @Column(nullable = false)
     private Long idUser;
 
-    public Avis(Long idAvis, Integer note, String commentaire, LocalDate date, Long idEmplacement) {
+    public Avis(Long idAvis, Integer note, String commentaire, LocalDate date, Long idEmplacement,Long idUser) {
         this.idAvis = idAvis;
         this.note = note;
         this.commentaire = commentaire;
         this.date = date;
         this.idEmplacement = idEmplacement;
+        this.idUser = idUser;
     }
 
     public Avis() {

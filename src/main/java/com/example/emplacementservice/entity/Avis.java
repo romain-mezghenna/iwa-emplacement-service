@@ -76,7 +76,27 @@ public class Avis {
         return date;
     }
 
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
+    }
+
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Avis{" +
+                "idAvis=" + idAvis +
+                ", note=" + note +
+                ", commentaire='" + commentaire + '\'' +
+                ", date=" + date +
+                ", idEmplacement=" + idEmplacement +
+                ", idUser=" + idUser +
+                '}';
     }
 }

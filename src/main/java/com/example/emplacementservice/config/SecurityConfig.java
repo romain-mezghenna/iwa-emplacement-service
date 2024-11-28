@@ -44,7 +44,7 @@ public class SecurityConfig {
             )
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                     // .requestMatchers("/auth/**").permitAll()  // Public endpoints
-                    .anyRequest().authenticated()  // All other endpoints require authentication
+                    .anyRequest().permitAll()  // All other endpoints require authentication
             );
 
         // Add JWT Token Filter before UsernamePasswordAuthenticationFilter
